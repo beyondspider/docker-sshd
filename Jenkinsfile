@@ -6,5 +6,10 @@ pipeline {
         sh './build.sh'
       }
     }
+    stage('push') {
+      steps {
+        sh './push.sh'
+      }
+    }
   }
 }
