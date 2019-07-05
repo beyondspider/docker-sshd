@@ -3,12 +3,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh './build.sh'
-      }
-    }
-    stage('push') {
-      steps {
-        sh './push.sh'
+        sh 'docker build -t beyondspider/sshd:latest .'
       }
     }
   }
