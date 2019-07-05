@@ -3,8 +3,8 @@ MAINTAINER from www.beyondspider.com by admin (admin@beyondspider.com)
 
 ENV TIME_ZONE Asia/Shanghai
 
-RUN yum -y install epel-release openssh-server net-tools pwgen && \
-	yum clean all && \
+RUN yum -y install epel-release && \
+	yum clean all && yum -y install openssh-server net-tools pwgen && \
 	ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key && \
 	ssh-keygen -t rsa -f /etc/ssh/ssh_host_ecdsa_key && \
 	ssh-keygen -t rsa -f /etc/ssh/ssh_host_ed25519_key && \
